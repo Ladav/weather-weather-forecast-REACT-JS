@@ -1,0 +1,19 @@
+.DataItem {
+    height: 210;
+    margin: 0 15px;
+    padding: 12px;
+    text-align: center;
+    background-image: linear-gradient(rgba(189,191,198, 0.2), rgba(189,191,198, 0.2));
+    border-radius: 25px;
+
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+}
+.Icon {
+    width: 80px;
+}
+.Temperature {
+    font-size: 25px;
+    font-weight: 700;
+}

@@ -1,0 +1,31 @@
+.Detail {
+    flex: 1;
+    width: 100%;
+    overflow: auto;
+    padding: 0 10px;
+    border-radius: 25px;
+}
+.Detail::-webkit-scrollbar {
+    appearance: none;
+    width: 5px;
+    height: 5px;
+    background-color: transparent;
+    outline: none;
+    border-radius: 25px;
+}
+.Detail::-webkit-scrollbar-thumb {
+    appearance: none;
+    background-color: rgb(0, 0, 0, 0.5);
+    border-radius: 15px;
+
+    scrollbar-color:  rgb(0, 0, 0, 0.5);
+    scrollbar-width: 10px;
+}
+
+.Summary, .Upcoming, .Data {
+    font-size: 14px;
+    color: #BDBFC6;
+    padding: 15px;
+    background-image: linear-gradient(rgba(189,191,198, 0.2), rgba(189,191,198, 0.2));
+    border-radius: 25px;
+}

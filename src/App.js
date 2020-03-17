@@ -1,12 +1,23 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
-import './App.css';
-import Header from './components/Header/Header';
+import classes from './App.css';
+import Weather from './containers/Weather/Weather';
+import Sidebar from './containers/Sidebar/Sidebar';
 
-function App() {
+const app = (props) => {
   return (
-    <Header />
-  );
-}
+    <div className={classes.App} >
+      <Weather />
+      <Sidebar />
+    </div>);
+};
 
-export default App;
+const mapStateToProps = (state) => {
+  return {
+    icon: state.weather.currently.icon,
+    image: state.image
+  }
+};
+
+export default connect(mapStateToProps)(app);

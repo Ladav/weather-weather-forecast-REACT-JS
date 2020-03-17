@@ -1,0 +1,13 @@
+.Footer {
+    width: 100%;
+    height : 60px;  
+    border-top: 2px solid rgb(248, 248, 248);
+    display: flex;
+}
+.Left, .Right { 
+    display: flex;
+    align-items: flex-end;
+}
+.Left { 
+    flex: 1;
+}

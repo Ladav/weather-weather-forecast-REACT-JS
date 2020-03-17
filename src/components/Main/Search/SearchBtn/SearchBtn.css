@@ -1,0 +1,43 @@
+.SearchBtn__container {
+    display: flex;
+    align-items: center;
+}
+.SearchBtn {
+    position: relative;
+    right: 0;
+    color: #444;
+    padding: 10px 25px;
+    transition: color 0.3s;
+    -webkit-transition: color 0.3s;
+    -moz-transition: color 0.3s;
+    -ms-transition: color 0.3s;
+    -o-transition: color 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: SLIDE_IN 0.7s;
+    -webkit-animation: SLIDE_IN 0.7s;
+}
+.SearchBtn img {
+    position: relative;
+    /* left: 15px; */
+    width: 30px;
+    font-size: 20px;
+    cursor: pointer;
+    z-index: 88;
+}
+.SearchBtn img:hover {
+    color: rgb(237, 241, 2);
+    opacity: 0.3;
+}
+
+@keyframes SLIDE_IN {
+    0% {
+        left: -100px;
+        opacity: 0;
+    }
+    100% {
+        left: 0px;
+        opacity: 1;
+    }
+}

@@ -1,0 +1,56 @@
+.Main__Container {
+    width: 100%;
+    height: calc(100vh - 85px);
+    display: flex;
+    flex-flow: column;
+}
+
+.Main {
+    width: 100%;
+    flex: 1;
+
+    display: flex;
+    align-items: flex-end;
+}
+
+.TemperatureOverview {
+    width: 100%;
+    height: 180px;
+    padding-bottom: 30px;
+
+    display: flex;
+}
+/* .Digit {
+    font-size: 150px;
+    line-height: 150px;
+}
+.Description {
+    flex: 1;
+    font-size: 50px;
+    display: flex;
+    align-items: flex-end;
+} */
+.Weather__Unit {
+    display: flex;
+    flex-flow: column;
+    align-items: flex-end;
+}
+.Unit {
+    flex: 1;
+    letter-spacing: 1px;
+    padding-top: 30px;
+
+    display: flex;
+    justify-content: space-between;
+}
+.Weather__Unit img {
+    width: 50px;
+}
+
+.Celsius, .Fahrenheit {
+    
+    cursor: pointer;
+}
+.Active {
+    color: #5499e6;
+}
