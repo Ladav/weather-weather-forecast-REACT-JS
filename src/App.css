@@ -1,30 +1,9 @@
 .App {
     width: 100%;
     height: 100vh;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(./assets/image/cloudy.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('./assets/image/cloudy.jpg');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
     display: flex;
-}
-/* .Main {
-    width:calc(100% - 360px);
-    padding: 50px 20px 35px 50px;
-    overflow: auto;
-} */
-.Main::-webkit-scrollbar {
-    appearance: none;
-    width: 5px;
-    height: 5px;
-    background-color: transparent;
-    outline: none;
-    border-radius: 25px;
-}
-.Main::-webkit-scrollbar-thumb {
-    appearance: none;
-    background-color: rgb(0, 0, 0, 0.5);
-    border-radius: 15px;
-
-    scrollbar-color:  rgb(0, 0, 0, 0.5);
-    scrollbar-width: 5px;
 }
