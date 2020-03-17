@@ -37,4 +37,4 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 
 ## UI
 
-![Application's User Interface](./temporary/github_photo.png)
+![Application's User Interface](./temporary/github_photo.PNG)
