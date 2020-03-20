@@ -1,6 +1,6 @@
 import React from 'react';
 
-import classes from './DataItem.css';
+import classes from './DataElement.css';
 const dataItem = (props) => {
     return (
         <div className={classes.DataItem}>

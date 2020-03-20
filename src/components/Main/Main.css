@@ -1,8 +1,10 @@
 .Main__Container {
     width: 100%;
-    height: calc(100vh - 85px);
+    height: 100vh;
     display: flex;
+    padding: 50px 20px 15px 50px;
     flex-flow: column;
+    border-bottom: 2px solid rgba(189,191,198, 0.2);
 }
 
 .Main {
@@ -20,21 +22,13 @@
 
     display: flex;
 }
-/* .Digit {
-    font-size: 150px;
-    line-height: 150px;
-}
-.Description {
-    flex: 1;
-    font-size: 50px;
-    display: flex;
-    align-items: flex-end;
-} */
+
 .Weather__Unit {
     display: flex;
     flex-flow: column;
     align-items: flex-end;
 }
+
 .Unit {
     flex: 1;
     letter-spacing: 1px;
@@ -43,14 +37,7 @@
     display: flex;
     justify-content: space-between;
 }
-.Weather__Unit img {
-    width: 50px;
-}
 
-.Celsius, .Fahrenheit {
-    
-    cursor: pointer;
-}
-.Active {
-    color: #5499e6;
-}
+.Weather__Unit img { width: 50px; }
+.Celsius, .Fahrenheit { cursor: pointer; }
+.Active { color: #5499e6; }

@@ -5,9 +5,10 @@ import moment from 'moment';
 import DataItem from '../../UI/DataItem/DataItem';
 import Title from '../../UI/Title/Title';
 import Summary from '../../UI/Summary/Summary';
-import classes from './Hourly.css';
-import icon from '../../assets/icon/cloudy.svg';
 import Footer from '../../UI/Footer/Footer';
+import classes from './Hourly.css';
+
+import icons from '../../assets/icon';
 
 const linkStyles = {
     textDecoration: 'none',
@@ -16,17 +17,32 @@ const linkStyles = {
     border: 'none',
     outline: 'none',
 }
-const Mapbox = <a href="https://darksky.net/" target="_blank" style={linkStyles}>&nbsp;<u>Mapbox</u>&nbsp;</a>;
-const Darksky = <a href="https://www.mapbox.com/" target="_blank" style={linkStyles}>&nbsp;<u>Darksky</u>&nbsp;</a>;
+const Mapbox = <a href="https://darksky.net/"
+    target="_blank"
+    rel="noopener noreferrer"
+    style={linkStyles}>&nbsp;<u>Mapbox</u>&nbsp;</a>;
+const Darksky = <a href="https://www.mapbox.com/"
+    target="_blank"
+    rel="noopener noreferrer"
+    style={linkStyles}>&nbsp;<u>Darksky</u>&nbsp;</a>;
 
 const hourly = (props) => {
+    const updateSummary = (str) => {
+        if (!str) return null;
+
+        const tokens = str.split('-'); //partly-cloudy->[partly, cloudy]
+        if (!tokens[1]) return tokens[0];
+        else return `${tokens[0]} ${tokens[1]}`;
+    };
+
     const hours = [];
     let hour = null;
     for (let i = 0; i < 24 && props.hourly.data[i]; i++) {    // there are 49 items in the hourly array
         hour = props.hourly.data[i];
         hours.push(<DataItem key={hour.time}
-            srcIcon={icon}
-            temp={hour.temperature}
+            summary={updateSummary(hour.icon)}
+            srcIcon={icons[hour.icon] || icons['cloudy']}
+            temp={hour.temperature.toFixed(2)}
             item={moment.unix(hour.time).local().format('HH•MM A')} />);
     };
 

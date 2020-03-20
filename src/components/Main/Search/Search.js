@@ -8,15 +8,18 @@ import * as actionCreator from '../../../store/action/search';
 
 const header = (props) => {
     const barEnterHandler = (e) => {
-        if (e.keyCode == 13) props.btnClickHandler();
+        if (+e.keyCode === 13) {
+            props.btnClickHandler();
+            e.target.blur();
+        }
     };
 
     let searchBar = null;
     if (props.search) searchBar = <SearchBtn clicked={props.btnClickHandler} />;
     return (
         <div className={classes.Header}>
-            <SearchBar value={props.search}
-                changed={(e) => props.valueChangeHandler(e)}
+            <SearchBar Value={props.search}
+                changed={(e) => props.valueChangeHandler(e.target.value)}
                 keyDown={barEnterHandler} />
             {searchBar}
         </div>
@@ -31,7 +34,7 @@ const mapStateToProps = (state) => {
 };
 const mapDispatchToProps = (dispatch) => {
     return {
-        valueChangeHandler: (event) => dispatch(actionCreator.searchValueChanged(event.target.value)),
+        valueChangeHandler: (val) => dispatch(actionCreator.searchValueChanged(val)),
         btnClickHandler: () => dispatch(actionCreator.searchButtonClicked())
     };
 };

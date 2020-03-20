@@ -7,7 +7,7 @@ const searchBar = (props) => {
             <input type="text"
                 className={classes.SearchBar}
                 placeholder="location..." 
-                value={props.value}
+                value={props.Value}
                 onChange={props.changed}
                 onKeyDown={props.keyDown}
                 spellCheck="false"/>

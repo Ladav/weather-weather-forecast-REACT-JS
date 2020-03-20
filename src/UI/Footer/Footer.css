@@ -6,7 +6,7 @@
 }
 .Left, .Right { 
     display: flex;
-    align-items: flex-end;
+    align-items: center;
 }
 .Left { 
     flex: 1;

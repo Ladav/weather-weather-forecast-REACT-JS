@@ -1,0 +1,26 @@
+.Message {
+    position: fixed;
+    z-index: 500;
+    color: #eee;
+    font-size: 18px;
+    font-family: inherit;
+    width: 70%;
+    padding: 16px;
+    left: 10%;
+    top: 8%;
+    background-color: rgb(243, 145, 145);
+    transition: all 0.7s ease-out;
+    border: 1px solid #ccc;
+    box-shadow: 1px 1px 1px black;
+    -webkit-transition: all 0.7s ease-out;
+    -moz-transition: all 0.7s ease-out;
+    -ms-transition: all 0.7s ease-out;
+    -o-transition: all 0.7s ease-out;
+}
+
+@media (min-width: 600px) {
+    .Message {
+        width: 500px;
+        left: 10%;
+    }
+}

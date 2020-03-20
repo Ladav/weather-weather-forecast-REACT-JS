@@ -1,7 +1,7 @@
 .DataItem {
-    height: 210;
+    height: 190px;
     margin: 0 15px;
-    padding: 12px;
+    padding: 12px 14px;
     text-align: center;
     background-image: linear-gradient(rgba(189,191,198, 0.2), rgba(189,191,198, 0.2));
     border-radius: 25px;
@@ -10,9 +10,22 @@
     flex-flow: column;
     justify-content: space-between;
 }
+.Summary, .Item {
+    font-size: 11px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.Item { font-size: 13px; }
+
 .Icon {
     width: 80px;
+    height: 80px;
 }
+.Icon img {
+    width: inherit;
+    height: inherit;
+}
+
 .Temperature {
     font-size: 25px;
     font-weight: 700;

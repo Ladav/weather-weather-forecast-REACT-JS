@@ -1,7 +1,7 @@
 import React from 'react';
 
 import classes from './SearchBtn.css';
-import search from './search (1).svg';
+import search from './search.svg';
 const searchBtn = (props) => {
     return (
         <div className={classes.SearchBtn__container}>

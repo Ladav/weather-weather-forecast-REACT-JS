@@ -1,6 +1,8 @@
 import * as actionTypes from './actionTypes';
 import axios from 'axios';
 
+import image from '../../assets/image';
+
 export const searchValueChanged = (val) => {
     return { type: actionTypes.SEARCH_VAL_CHANGED, val };
 };
@@ -9,6 +11,7 @@ const formatLocation = (loc) => {
     const place = loc.split(',');
     return place[0] + ' • ' + place[place.length - 1];
 };
+
 const setLoadingOff = () => {
     return { type: actionTypes.LOADING_OFF };
 };
@@ -23,31 +26,20 @@ const fetchedDataHandler = (data) => {
     };
 };
 
-const errorHandler = (error) => {
-    return {
-        type: actionTypes.ERROR_OCCUR,
-        error
-    };
-};
-
-export const searchButtonClicked = (val) => {
+export const searchButtonClicked = () => {
     return (dispatch, getState) => {
         dispatch(setLoadingOn());
-        axios.get(`https://ladav-weatherly.herokuapp.com/weather?address=${getState().search}&unit=si`)
+        axios.get(`https://ladav-weatherly.herokuapp.com/weather?address=${getState().search}&unit=${getState().temperature.unit}`)
             .then(res => {
                 if (res.data.error) {
-                    console.log("error " + res.data.error)
-                    return dispatch(errorHandler(res));
+                    throw new Error(res.data.error);
                 }
-
-                //// state for main
+                
                 const forecast = res.data.forecast;
+                const coverImage = image[forecast.currently.icon];
                 console.log(forecast);
                 const forecastData = {
-                    temp: {
-                        celsius: forecast.currently.temperature,
-                        fahrenheit: ((forecast.currently.temperature * 9/5) + 32).toFixed(2)
-                    },
+                    temperature: forecast.currently.temperature|0,
                     location: {
                         name: formatLocation(forecast.location),
                         longitude: forecast.longitude,
@@ -65,11 +57,20 @@ export const searchButtonClicked = (val) => {
                             data: forecast.hourly.data,
                             summary: forecast.hourly.summary
                         }
-                    }
+                    },
+                    image: coverImage
                 };
                 dispatch(fetchedDataHandler(forecastData));
-
                 dispatch(setLoadingOff());
-            }).catch(e => console.log(e));
+            }).catch(e => {
+                dispatch(setLoadingOff());
+            });
+        };
+};
+
+export const unitChanged = (unit) => {
+    return (dispatch) => {
+        dispatch({ type: actionTypes.UNIT_CHANGED, unit});
+        dispatch(searchButtonClicked());
     };
 };
