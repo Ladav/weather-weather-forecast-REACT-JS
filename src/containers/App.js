@@ -13,8 +13,6 @@ import About from '../components/Sidebar/About/About';
 
 import withErrorHandler from '../hoc/withErrorHandler/withErrorHandler';
 
-// import image from '../assets/image';
-
 class App extends Component {
   state = {
     time: {
@@ -29,6 +27,11 @@ class App extends Component {
   };
 
   componentDidMount() {
+    console.log('adf')
+    navigator.geolocation.getCurrentPosition((position) => {
+      console.log(position);
+    });
+
     document.querySelector(`.${classes.Weather}`).addEventListener("scroll", this.onScroll);
 
     function updateTime(t) {
@@ -63,10 +66,12 @@ class App extends Component {
         <div className={classes.Weather}>
           <Main time={this.state.time} scroll={this.state.scroll} />
           {this.props.loading ? <Spinner /> : null}
-          {this.props.isAvail ? <>
-            <Daily />
-            <Hourly />
-          </> : null}
+          {this.props.isAvail ?
+            <React.Fragment>
+              <Daily />
+              <Hourly />
+            </React.Fragment>
+            : null}
         </div>
         <div className={classes.Sidebar}>
           <Detail />

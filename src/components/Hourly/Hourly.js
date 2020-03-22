@@ -55,7 +55,7 @@ const hourly = (props) => {
                     {hours}
                 </div>
             </div>
-            <Footer left={null} right={<>Powered By • {Mapbox} and {Darksky} APIs</>} />
+            <Footer left={null} right={<React.Fragment>Powered By • {Mapbox} and {Darksky} APIs</React.Fragment>} />
         </div>
     )
 };

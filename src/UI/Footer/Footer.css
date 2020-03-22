@@ -9,3 +9,7 @@
     display: flex;
     align-items: center;
 }
+
+@media (max-width: 614px) {
+    .Footer { font-size: 14px; }
+}

@@ -52,5 +52,21 @@
 }
 @media (max-width: 864px) {
     .DaySummary { display: block; }
-    .Main__Container { padding: 50px 40px 15px 40px; }
+    .Main__Container { padding: 30px 40px 15px 40px; }
+}
+@media (max-width: 614px) {
+    .Main__Container { padding: 50px 30px 15px 30px; }
+    .Temperature {
+        font-size: 115px;
+        line-height: 200px;
+    }
+    .Unit { 
+        font-size: 14px;
+        letter-spacing: 0px;
+    }
+}
+@media (max-width: 444px) {
+    .Main__Container { padding: 35px 15px 15px 15px; }
+    .Weather__Unit { width: 15%; }
+    .Temperature { font-size: 95px; } 
 }

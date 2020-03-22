@@ -2,7 +2,6 @@
     width: 100%;
     height: 100vh;
     padding: 50px 20px 15px 50px;
-    margin-top: 50px;
     
     display: flex;
     flex-flow: column;
@@ -50,5 +49,16 @@
 }
 
 @media (max-width: 864px) {
+    .Hourly { padding: 50px 40px 15px 40px; }
+}
+@media (max-width: 614px) {
     .Hourly { padding: 50px 30px 15px 30px; }
+    .Hours__Container {
+        width: 100%;
+        height: 32%;
+        padding: 12px;
+    }
+}
+@media (max-width: 444px) {
+    .Hourly { padding: 35px 15px 15px 15px; }
 }

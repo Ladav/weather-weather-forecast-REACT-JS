@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 
 import classes from './Message.css';
 import Backdrop from '../Backdrop/Backdrop';
-import Aux from '../../hoc/Auxiliary/Auxiliary';
 
 class message extends Component {
     shouldComponentUpdate(nextProps, nextState) {
@@ -12,7 +11,7 @@ class message extends Component {
     render() {
         console.log(this.props)
         return (
-            <Aux>
+            <React.Fragment>
                 <Backdrop show={this.props.show} closed={this.props.backdropClosed} />
                 <div className={classes.Message}
                     style={{
@@ -21,7 +20,7 @@ class message extends Component {
                     }}>
                     {this.props.children}
                 </div>
-            </Aux>
+            </React.Fragment>
         );
     };
 };

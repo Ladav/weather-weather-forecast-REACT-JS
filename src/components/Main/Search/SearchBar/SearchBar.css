@@ -25,3 +25,10 @@
 }
 .SearchBar:focus { opacity: 1; }
 .SearchBar:hover { opacity: 1; }
+
+@media (max-width: 614px) {
+    .SearchBar { width: 320px; }
+}
+@media (max-width: 444px) {
+    .SearchBar { width: 250px; }
+}

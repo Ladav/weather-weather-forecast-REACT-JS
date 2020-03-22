@@ -13,3 +13,9 @@
 @media (max-width:864px) {
     .Summary { font-size: 30px; }
 }
+@media (max-width:614px) {
+    .Summary { font-size: 26px; }
+}
+@media (max-width:444px) {
+    .Summary { font-size: 20px; }
+}

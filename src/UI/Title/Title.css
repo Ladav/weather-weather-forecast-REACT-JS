@@ -7,3 +7,12 @@
 @media (max-width: 1024px) {
     .Title { font-size: 80px; }
 }
+@media (max-width: 614px) {
+    .Title { font-size: 70px; }
+}
+@media (max-width: 614px) {
+    .Title { font-size: 70px; }
+}
+@media (max-width: 444px) {
+    .Title { font-size: 65px; }
+}

@@ -10,6 +10,7 @@
     display: flex;
     flex-flow: column;
     justify-content: space-between;
+    align-items: center;
 }
 .Summary, .Item {
     font-size: 11px;
@@ -30,6 +31,9 @@
 .Temperature {
     font-size: 23px;
     font-weight: 700;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 @media (max-width: 864px) {
@@ -44,4 +48,27 @@
         width: 60px;
         height: 60px;
     }
+}
+@media (max-width:614px) {
+    .DataItem {
+        width: 80px;
+        height: 85%;
+        margin: 0 7px;
+        padding: 10px;
+    }
+    .Summary { font-size: 10px; }
+    .Item { 
+        font-size: 11px;
+        width: 58px;
+    }
+    .Icon {
+        width: 40px;
+        height: 40px;
+    }
+    .Temperature { font-size: 18px; }
+}
+
+@media (max-width:444px) {
+    .DataItem { padding: 10px 7px; }
+    .Summary { width: 40px; }
 }
