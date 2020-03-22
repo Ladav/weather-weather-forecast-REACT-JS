@@ -1,0 +1,33 @@
+.DirectionArrow {
+    width: 30px;
+    height: 60px;
+    color: #BDBFC6;
+    display: flex;
+    animation: BOUNCE 3s infinite;
+    align-items: flex-end;
+    justify-content: center;
+    -webkit-animation: BOUNCE 3s infinite;
+}
+
+.DirectionArrow svg { width: 28px; }
+
+@keyframes BOUNCE {
+  0%, 20%, 50%, 80%, 100% {
+    -moz-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  40% {
+    -moz-transform: translateY(-30px);
+    -ms-transform: translateY(-30px);
+    -webkit-transform: translateY(-30px);
+    transform: translateY(-30px);
+  }
+  60% {
+    -moz-transform: translateY(-15px);
+    -ms-transform: translateY(-15px);
+    -webkit-transform: translateY(-15px);
+    transform: translateY(-15px);
+  }
+}

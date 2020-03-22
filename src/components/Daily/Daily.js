@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import moment from 'moment';
 
 import classes from './Daily.css';
-import icon from '../../assets/icon/cloudy.svg';
 import Title from '../../UI/Title/Title';
 import Summary from '../../UI/Summary/Summary';
 import DataItem from '../../UI/DataItem/DataItem';
@@ -19,7 +18,7 @@ const daily = (props) => {
         if (!tokens[1]) return tokens[0];
         else return `${tokens[0]} ${tokens[1]}`;
     };
-    
+
     const days = props.daily.data.map((day) => {
         return <DataItem key={day.time}
             summary={updateSummary(day.icon)}
@@ -27,7 +26,7 @@ const daily = (props) => {
             temp={day.temperatureHigh}
             item={moment.unix(day.time).local().format('dddd')} />
     });
-    
+
     return (
         <div className={classes.Daily}>
             <Title title={'This Week'} styles={{ alignItem: 'flex-start' }} />

@@ -4,29 +4,36 @@ import moment from 'moment';
 
 import classes from './Main.css';
 import Search from './Search/Search';
-import Title from '../../UI/Title/Title';
 import Summary from '../../UI/Summary/Summary';
 import Footer from '../../UI/Footer/Footer';
+import DirectionArrow from '../../UI/DirectionArrow/DirectionArrow';
 import * as actionCreator from '../../store/action/search';
 
 import icons from '../../assets/icon';
+import DaySummary from '../utility/DaySummary';
+
+const updateSummary = (str) => {
+    if (!str) return null;
+
+    const tokens = str.split('-'); //partly-cloudy->[partly, cloudy]
+    if (!tokens[1]) return tokens[0];
+    else return `${tokens[0]} ${tokens[1]}`;
+};
 
 const main = (props) => {
-    const updateSummary = (str) => {
-        if (!str) return null;
+    let daySummary = null;
+    if (props.isAvail) daySummary = <DaySummary className={classes.DaySummary} />
 
-        const tokens = str.split('-'); //partly-cloudy->[partly, cloudy]
-        if (!tokens[1]) return tokens[0];
-        else return `${tokens[0]} ${tokens[1]}`;
-    };
-    
     return (
         <div className={classes.Main__Container}>
             <Search />
+            <Summary summary={daySummary} />
+
             <div className={classes.Main}>
                 <div className={classes.TemperatureOverview}>
-                    <Title title={props.temp.value + '°'}
-                        styles={{ fontSize: '170px', lineHeight: '170px', fontWeight: '100' }} />
+                    <div className={classes.Temperature}>
+                        {props.temp.value + '°'}
+                    </div>
                     <Summary
                         summary={updateSummary(props.currently.icon)}
                         styles={{
@@ -53,6 +60,7 @@ const main = (props) => {
             </div>
             <Footer
                 left={props.loc.name}
+                middle={props.isAvail && !props.scroll ? <DirectionArrow  /> : null}
                 right={moment().format(`dddd • DD MMMM YYYY • ${props.time.hh}:${props.time.mm} A`)} />
         </div>
     );
@@ -62,7 +70,8 @@ const mapStateToProps = (state) => {
     return {
         currently: state.weather.currently,
         temp: state.temperature,
-        loc: state.location
+        loc: state.location,
+        isAvail: state.dataAvailable
     };
 };
 const mapDispatchToProps = (dispatch) => {

@@ -6,3 +6,10 @@
     display: flex;
     align-items: center;
 }
+
+@media (max-width:1024px) {
+    .Summary { font-size: 35px; }
+}
+@media (max-width:864px) {
+    .Summary { font-size: 30px; }
+}

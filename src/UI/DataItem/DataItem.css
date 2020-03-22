@@ -1,7 +1,8 @@
 .DataItem {
-    height: 190px;
-    margin: 0 15px;
-    padding: 12px 14px;
+    width: 100px;
+    height: 170px;
+    margin: 0 12px;
+    padding: 12px 13px;
     text-align: center;
     background-image: linear-gradient(rgba(189,191,198, 0.2), rgba(189,191,198, 0.2));
     border-radius: 25px;
@@ -18,8 +19,8 @@
 .Item { font-size: 13px; }
 
 .Icon {
-    width: 80px;
-    height: 80px;
+    width: 70px;
+    height: 70px;
 }
 .Icon img {
     width: inherit;
@@ -27,6 +28,20 @@
 }
 
 .Temperature {
-    font-size: 25px;
+    font-size: 23px;
     font-weight: 700;
+}
+
+@media (max-width: 864px) {
+    .DataItem {
+        width: 90px;
+        height: 160px;
+        margin: 0 12px;
+        padding: 11px;
+    }
+    .Item { font-size: 12px; }
+    .Icon {
+        width: 60px;
+        height: 60px;
+    }
 }

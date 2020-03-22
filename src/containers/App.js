@@ -20,10 +20,17 @@ class App extends Component {
     time: {
       hh: new Date().getHours(),
       mm: new Date().getMinutes()
-    }
+    },
+    scroll: false
+  };
+
+  onScroll = () => {
+    this.setState({ scroll: true });
   };
 
   componentDidMount() {
+    document.querySelector(`.${classes.Weather}`).addEventListener("scroll", this.onScroll);
+
     function updateTime(t) {
       if (t < 10) return "0" + t;
       else return t;
@@ -35,21 +42,26 @@ class App extends Component {
     }, 1000);
   };
 
+  componentWillUnmount() {
+    document.querySelector(`.${classes.Weather}`).removeEventListener("scroll", this.onScroll);
+  };
+
   shouldComponentUpdate(nextProps, nextState) {
     if (nextState.time.mm === this.state.time.mm &&
       nextProps.isAvail === this.props.isAvail &&
-      nextProps.loading === this.props.loading) return false;
+      nextProps.loading === this.props.loading &&
+      nextState.scroll === this.state.scroll) return false;
     else return true;
-  }
+  };
 
   render() {
     return (
       <div className={classes.App} style={{
-        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-          url(${this.props.image})`
-      }} >
+        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+        url(${this.props.image})`
+      }}>
         <div className={classes.Weather}>
-          <Main time={this.state.time} />
+          <Main time={this.state.time} scroll={this.state.scroll} />
           {this.props.loading ? <Spinner /> : null}
           {this.props.isAvail ? <>
             <Daily />

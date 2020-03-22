@@ -2,11 +2,3 @@
     height: 60px;
     display: flex;
 }
-
-@media(max-width: 660px) {
-    .Header {
-        flex: 1;
-        display: flex;
-        flex-flow: column;
-    }
-}

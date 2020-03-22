@@ -30,7 +30,7 @@ export const searchButtonClicked = () => {
     return (dispatch, getState) => {
         dispatch(setLoadingOn());
         axios.get(`https://ladav-weatherly.herokuapp.com/weather?address=${getState().search}&unit=${getState().temperature.unit}`)
-            .then(res => {
+            .then((res) => {
                 if (res.data.error) {
                     throw new Error(res.data.error);
                 }

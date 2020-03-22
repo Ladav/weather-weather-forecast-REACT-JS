@@ -3,11 +3,9 @@
     height : 60px;  
     border-top: 2px solid rgb(248, 248, 248);
     display: flex;
+    justify-content: space-between;
 }
 .Left, .Right { 
     display: flex;
     align-items: center;
-}
-.Left { 
-    flex: 1;
 }

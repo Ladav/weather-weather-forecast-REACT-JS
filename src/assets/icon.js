@@ -1,6 +1,6 @@
 const icon = {
     'clear-night': require('./icon/clear-night.svg'),
-    'clear-sky': require('./icon/clear-sky.svg'),
+    'clear-day': require('./icon/clear-day.svg'),
     'cloudy': require('./icon/cloudy.svg'),
     'fog': require('./icon/fog.svg'),
     'hail': require('./icon/hail.svg'),
