@@ -4,6 +4,9 @@
     overflow: auto;
     padding: 0 10px;
     border-radius: 25px;
+
+    scrollbar-color: rgb(0, 0, 0, 0.5) rgb(0, 0, 0, 0.1); /* firefox */
+    scrollbar-width: 10px;
 }
 .Detail::-webkit-scrollbar {
     appearance: none;

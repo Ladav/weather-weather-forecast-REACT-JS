@@ -23,8 +23,9 @@
     width: calc(100% - 360px);
     height: 100%;
     overflow: auto;
-    display: flex;
-    flex-flow: column;
+
+    scrollbar-color: rgb(0, 0, 0, 0.9) rgb(0, 0, 0, 0.1);  /* firefox */
+    scrollbar-width: 10px;
 }
 .Weather::-webkit-scrollbar {
     appearance: none;

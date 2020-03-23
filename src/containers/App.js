@@ -30,7 +30,6 @@ class App extends Component {
     // responsive mobile view
     const appHeight = () => document.documentElement.style.setProperty('--app-height', `${window.innerHeight}px`);
     appHeight();
-    
     // remove direction arrow on scroll
     document.querySelector(`.${classes.Weather}`).addEventListener("scroll", this.onScroll);
 
@@ -62,7 +61,7 @@ class App extends Component {
       <div className={classes.App} style={{
         backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
         url(${this.props.image})`
-      }}>
+      }} >
         <div className={classes.Weather}>
           <Main time={this.state.time} scroll={this.state.scroll} />
           {this.props.loading ? <Spinner /> : null}
