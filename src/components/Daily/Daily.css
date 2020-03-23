@@ -60,5 +60,9 @@
     }
 }
 @media (max-width: 444px) {
-    .Daily { padding: 35px 15px 15px 15px; }
+    .Daily {
+        height: var( --app-height ); 
+        padding: 35px 15px 15px 15px; 
+    }
+    .Days__Container { height: 35%; }
 }

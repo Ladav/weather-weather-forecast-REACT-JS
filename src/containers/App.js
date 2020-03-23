@@ -27,11 +27,11 @@ class App extends Component {
   };
 
   componentDidMount() {
-    console.log('adf')
-    navigator.geolocation.getCurrentPosition((position) => {
-      console.log(position);
-    });
-
+    // responsive mobile view
+    const appHeight = () => document.documentElement.style.setProperty('--app-height', `${window.innerHeight}px`);
+    appHeight();
+    
+    // remove direction arrow on scroll
     document.querySelector(`.${classes.Weather}`).addEventListener("scroll", this.onScroll);
 
     function updateTime(t) {

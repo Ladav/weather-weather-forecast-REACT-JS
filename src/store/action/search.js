@@ -36,8 +36,7 @@ export const searchButtonClicked = () => {
                 }
                 
                 const forecast = res.data.forecast;
-                const coverImage = image[forecast.currently.icon];
-                console.log(forecast);
+                const coverImage = image[forecast.currently.icon]; 
                 const forecastData = {
                     temperature: forecast.currently.temperature|0,
                     location: {

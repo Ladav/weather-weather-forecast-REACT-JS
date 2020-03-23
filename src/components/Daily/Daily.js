@@ -19,12 +19,15 @@ const daily = (props) => {
         else return `${tokens[0]} ${tokens[1]}`;
     };
 
+    const isMobile = window.innerWidth < 444;
     const days = props.daily.data.map((day) => {
         return <DataItem key={day.time}
             summary={updateSummary(day.icon)}
             srcIcon={icons[day.icon] || icons['cloudy']}
             temp={day.temperatureHigh}
-            item={moment.unix(day.time).local().format('dddd')} />
+            item={isMobile ?
+                moment.unix(day.time).local().format('dddd').slice(0, 3) :
+                moment.unix(day.time).local().format('dddd')} />
     });
 
     return (

@@ -25,11 +25,11 @@ const main = (props) => {
     if (props.isAvail) daySummary = <DaySummary className={classes.DaySummary} />
 
     return (
-        <div className={classes.Main__Container}>
-            <Search />
-            <Summary summary={daySummary} />
+        // <div className={classes.Main__Container}>
 
             <div className={classes.Main}>
+            <Search />
+            <Summary summary={daySummary} />
                 <div className={classes.TemperatureOverview}>
                     <div className={classes.Temperature}>
                         {props.temp.value + '°'}
@@ -57,12 +57,12 @@ const main = (props) => {
                         <img src={icons[props.currently.icon] || icons['cloudy']} alt="weather icon" />
                     </div>
                 </div>
-            </div>
-            <Footer
+                <Footer
                 left={props.loc.name}
                 middle={props.isAvail && !props.scroll ? <DirectionArrow  /> : null}
                 right={moment().format(`dddd • DD MMMM YYYY • ${props.time.hh}:${props.time.mm} A`)} />
-        </div>
+            </div>
+        // </div>
     );
 };
 
