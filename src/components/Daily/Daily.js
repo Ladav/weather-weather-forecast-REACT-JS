@@ -5,7 +5,7 @@ import moment from 'moment';
 import classes from './Daily.css';
 import Title from '../../UI/Title/Title';
 import Summary from '../../UI/Summary/Summary';
-import DataItem from '../../UI/DataItem/DataItem';
+import DataItem from '../utility/DataItem/DataItem';
 import Footer from '../../UI/Footer/Footer';
 
 import icons from '../../assets/icon';

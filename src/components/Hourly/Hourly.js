@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import moment from 'moment';
 
-import DataItem from '../../UI/DataItem/DataItem';
+import DataItem from '../utility/DataItem/DataItem';
 import Title from '../../UI/Title/Title';
 import Summary from '../../UI/Summary/Summary';
 import Footer from '../../UI/Footer/Footer';

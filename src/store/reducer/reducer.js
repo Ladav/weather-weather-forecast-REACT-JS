@@ -4,7 +4,7 @@ import { updateObject } from '../utility';
 import image from '../../assets/image';
 
 const intialState = {
-    search: 'Antarctica',
+    search: '',
     location: {
         latitude: '',
         longitude: '',

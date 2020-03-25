@@ -4,7 +4,7 @@ import * as moment from 'moment';
 
 import classes from './Detail.css';
 import DataElement from './DataElement/DataElement';
-import Heading from '../../../UI/Heading/Heading';
+import Heading from './Heading/Heading';
 
 import DaySummary from '../../utility/DaySummary';
 

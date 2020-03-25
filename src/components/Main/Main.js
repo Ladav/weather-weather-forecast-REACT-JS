@@ -6,7 +6,7 @@ import classes from './Main.css';
 import Search from './Search/Search';
 import Summary from '../../UI/Summary/Summary';
 import Footer from '../../UI/Footer/Footer';
-import DirectionArrow from '../../UI/DirectionArrow/DirectionArrow';
+import DirectionArrow from './DirectionArrow/DirectionArrow';
 import * as actionCreator from '../../store/action/search';
 
 import icons from '../../assets/icon';
