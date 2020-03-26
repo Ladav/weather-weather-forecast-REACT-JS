@@ -9,7 +9,6 @@ class message extends Component {
     }
 
     render() {
-        console.log(this.props)
         return (
             <React.Fragment>
                 <Backdrop show={this.props.show} closed={this.props.backdropClosed} />

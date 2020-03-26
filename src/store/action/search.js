@@ -29,13 +29,13 @@ const fetchedDataHandler = (data) => {
 export const searchButtonClicked = () => {
     return (dispatch, getState) => {
         dispatch(setLoadingOn());
-        axios.get(`https://ladav-weatherly.herokuapp.com/weather?address=${getState().search}&unit=${getState().temperature.unit}`)
+        axios.get(`https://ladav-weatherly.herokuapp.com/weather?address=${getState().search}&unit=${getState().temperature.unit}&exlude=minutely,flags,alerts`)
             .then((res) => {
                 if (res.data.error) {
                     throw new Error(res.data.error);
                 }
                 
-                const forecast = res.data.forecast;
+                const forecast = res.data;
                 const coverImage = image[forecast.currently.icon];
                 const forecastData = {
                     temperature: forecast.currently.temperature|0,
